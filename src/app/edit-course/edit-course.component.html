@@ -1,0 +1,19 @@
+<p>edit-course works!</p>
+
+<div class="form-container container col-8" > 
+    <div class="edit-form">
+            <div class="form-group">
+                <label for="title">Id</label>
+                <input type="text" class="form-control" id="id" required
+                [(ngModel)]="course.id" name="id" />
+                <label for="title">Title</label>
+                <input type="text" class="form-control" id="title" required
+                [(ngModel)]="course.title" name="title" />
+
+            </div>
+            <button class="btn btn-primary" (click)="editCourse()" >save</button>
+        
+    </div>
+
+
+</div>

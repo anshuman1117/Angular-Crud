@@ -1,6 +1,6 @@
 <p>add-course works!</p>
 
-<div class="form-container">
+<div class="form-container container col-8" > 
     <div class="submit-form">
         <div *ngIf="!submitted">
             <div class="form-group">
@@ -9,12 +9,12 @@
                 [(ngModel)]="course.title" name="title" />
 
             </div>
-            <button (click)="saveCourse()" >save</button>
+            <button class="btn btn-primary" (click)="saveCourse()" >save</button>
         </div>
 
         <div *ngIf="submitted">
             <h4>submitted Successfully !</h4>
-            <button (click)="newCourse()" >Add More</button>
+            <button class="btn btn-primary" (click)="newCourse()" >Add More</button>
         </div>
 
     </div>

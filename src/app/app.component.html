@@ -1,5 +1,22 @@
 <div> 
-  <h2>Course Management System</h2>
-  <app-add-course></app-add-course>
-  <app-course-list></app-course-list>
+  <nav class="navbar navbar-dark bg-primary">
+    <h2 style="color: white;">Course Management System</h2>
+  </nav>
+
+  <!-- <app-add-course></app-add-course>
+  <app-course-list></app-course-list> -->
+
+
+  <nav class="navbar navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="componentHome">Home</a>
+      <a class="navbar-brand" routerLink="componentAdd">Add</a>
+      <a class="navbar-brand" routerLink="componentEdit">Edit</a>
+      <!-- <a class="navbar-brand" routerLink="componentHome">Delete</a> -->
+    </div>
+  </nav>
+
+
+
+  <router-outlet></router-outlet> 
 </div>

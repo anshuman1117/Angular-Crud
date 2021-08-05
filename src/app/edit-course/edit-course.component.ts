@@ -2,33 +2,34 @@ import { Component, OnInit } from '@angular/core';
 import { CourseService } from '../course.service';
 
 @Component({
-  selector: 'app-add-course',
-  templateUrl: './add-course.component.html',
-  styleUrls: ['./add-course.component.css']
+  selector: 'app-edit-course',
+  templateUrl: './edit-course.component.html',
+  styleUrls: ['./edit-course.component.css']
 })
-export class AddCourseComponent implements OnInit {
+export class EditCourseComponent implements OnInit {
+
 
   course={
-    "id":Math.floor(Math.random() * 100) + 1,
+    "id" :0,
     "title":''
   };
-
-  submitted=false;
-
 
   constructor(private courseService:CourseService) { }
 
   ngOnInit(): void {
   }
 
+  submitted=false;
 
-  saveCourse():void{
+  editCourse(){
+ 
+    console.log(this.course.id + " " + this.course.title)
     const data={
       "id":this.course.id,
       "title":this.course.title
     };
 
-    this.courseService.createCourse(data).subscribe(
+    this.courseService.updateCourse(this.course.id,data).subscribe(
       response=>{
         console.log(response);
         this.submitted=true;
@@ -38,16 +39,7 @@ export class AddCourseComponent implements OnInit {
         this.submitted=false;
       }
     );
-  }
 
-
-  newCourse():void{
-    this.submitted=false;
-    this.course={
-      "id":Math.random(),
-      "title":''
-     
-    };
 
   }
 

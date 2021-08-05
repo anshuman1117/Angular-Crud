@@ -28,4 +28,23 @@ export class CourseListComponent implements OnInit {
     )
   }
 
+  removeCourse(id:number){
+
+    this.courseService.deleteCourseById(id).subscribe(
+      response => {console.log(response)},
+      error=>{console.log(error);}
+    )
+
+  }
+
+
+  editCourse(id:number){
+
+    this.courseService.updateCourse(id,this.retriveCourses).subscribe(
+      response => {console.log(response)},
+      error=>{console.log(error);}
+    )
+
+  }
+
 }
